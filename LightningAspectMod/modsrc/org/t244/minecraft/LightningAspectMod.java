@@ -29,7 +29,7 @@ public class LightningAspectMod {
 	public static Configuration config;
 	public static int EnchantmentID;
 	public static LightningAspect instance;
-	private static final int defaultID = 52;
+	private static final int defaultID = 64; // last built-in ID is 51, so we'll treat 0-63 as reserved
 	
 	
 	@PreInit
@@ -41,7 +41,7 @@ public class LightningAspectMod {
 	
 	@Init
 	public void load(FMLInitializationEvent e) {
-		if (EnchantmentID != -1) {
+		if (EnchantmentID != defaultID) {
 			instance = new LightningAspect(EnchantmentID,1);
 			return;
 		}
@@ -50,7 +50,6 @@ public class LightningAspectMod {
 			try {
 				instance = new LightningAspect(id, 1);
 			} catch (IllegalArgumentException ex) {
-				//TODO: figure out why this catch doesn't catch
 				instance = null;
 				continue;
 			}

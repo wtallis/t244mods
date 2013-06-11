@@ -17,7 +17,7 @@ import net.minecraftforge.event.entity.player.AttackEntityEvent;
  */
 public class LightningAspect extends Enchantment {
 
-	public LightningAspect(int par1, int par2) throws IllegalArgumentException {
+	public LightningAspect(int par1, int par2) {
 		super(par1, par2, EnumEnchantmentType.weapon);
 		this.setName("lightning");
 	}
