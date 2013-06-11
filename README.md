@@ -20,4 +20,4 @@ LightningAspectMod
 
 *INCOMPLETE*
 
-Shows how to add a new sword enchantment. The enchantment causes any mob you attack to be struck by lightning. If used in survival mode, you will also be harmed by the lightning bolt. Forge currently lacks a system for getting an unused enchantment ID, so this mod will likely confilct with any other enchantment-related mods. This mod also does not currently provide a localizable name for the enchantment.
+Shows how to add a new sword enchantment. The enchantment causes any mob you attack to be struck by lightning. If used in survival mode, you will also be harmed by the lightning bolt. Forge currently lacks a system for getting an unused enchantment ID, so we do our best to find one, but things still might confilct with other enchantment mods. This mod also does not currently provide a localizable name for the enchantment.
