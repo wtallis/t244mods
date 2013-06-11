@@ -26,6 +26,10 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class LightningAspectMod {
 	public static final String modid = "T244_LightningAspectMod";
 	
+	/* we need to keep the Configuration object around past the PreInit phase,
+	 * because we'll have to update and save the configuration after successfully 
+	 * acquiring an enchantment ID in the Init phase
+	 */
 	public static Configuration config;
 	public static int EnchantmentID;
 	public static LightningAspect instance;
@@ -36,16 +40,27 @@ public class LightningAspectMod {
 	public void loadConfig(FMLPreInitializationEvent e) {
 		config = new Configuration(e.getSuggestedConfigurationFile());
 		config.load();
-		EnchantmentID = config.get("enchantment", "LightningAspect", defaultID).getInt();
+		
+		if (config.hasKey("enchantment", "LightningAspect")) {
+			/* note: this should never actually default to 256, 
+			 * since we just made sure that the key actually exists
+			 * (and it should have been initialized properly) 
+			 */ 
+			EnchantmentID = config.get("enchantment", "LightningAspect", 256).getInt();
+		} else {
+			EnchantmentID = -1; // signal that we don't have an ID that is expected to be valid and usable
+		}
 	}
 	
 	@Init
 	public void load(FMLInitializationEvent e) {
-		if (EnchantmentID != defaultID) {
+		if (EnchantmentID != -1) {
 			instance = new LightningAspect(EnchantmentID,1);
 			return;
 		}
 		
+		// search for a usable ID (should only happen on first run of mod)
+		// TODO: try to get a low ID as a last resort
 		for (int id=defaultID; id<256; id++) {
 			try {
 				instance = new LightningAspect(id, 1);
@@ -54,9 +69,11 @@ public class LightningAspectMod {
 				continue;
 			}
 			EnchantmentID = id;
-			/*TODO: save enchantment ID (not likely, 
-				will need to move allocation to pre-init, 
-				check existence of key before attempting to load) */
+			/* we're calling get() when we know the key doesn't exist,
+			 * so it will get initialized to the default, and then we can save it. 
+			 */
+			EnchantmentID = config.get("enchantment", "LightningAspect", id).getInt();
+			config.save();
 			break;
 		}
 

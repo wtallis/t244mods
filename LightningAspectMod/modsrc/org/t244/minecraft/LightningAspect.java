@@ -11,9 +11,7 @@ import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 
 /**
- * @author wtallis
- * TODO: effect
- * TODO: proper name for GUI
+ * TODO: proper localizable name for GUI
  */
 public class LightningAspect extends Enchantment {
 
