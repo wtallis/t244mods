@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.t244.minecraft;
 
 import net.minecraft.block.Block;

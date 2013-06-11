@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.t244.minecraft;
 
 import net.minecraft.enchantment.Enchantment;
@@ -20,11 +17,6 @@ import net.minecraftforge.event.entity.player.AttackEntityEvent;
  */
 public class LightningAspect extends Enchantment {
 
-	/**
-	 * @param par1
-	 * @param par2
-	 * @param par3EnumEnchantmentType
-	 */
 	public LightningAspect(int par1, int par2) throws IllegalArgumentException {
 		super(par1, par2, EnumEnchantmentType.weapon);
 		this.setName("lightning");

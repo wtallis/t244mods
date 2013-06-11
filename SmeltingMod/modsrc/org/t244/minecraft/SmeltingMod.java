@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.t244.minecraft;
 
 import net.minecraft.block.Block;
@@ -12,10 +9,6 @@ import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-/**
- * @author wtallis
- *
- */
 @Mod(modid = SmeltingMod.modid, name = "SmeltingMod", version = "1.0")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 public class SmeltingMod {

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.t244.minecraft;
 
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -24,10 +21,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-/**
- * @author wtallis
- *
- */
 @Mod(modid=LightningAspectMod.modid, name="LightningAspectMod", version="1.0")
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 public class LightningAspectMod {
