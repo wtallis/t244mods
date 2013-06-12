@@ -1,0 +1,21 @@
+{
+	"modinfoversion":2,
+	"modlist": [{
+		"modid": "T244_EmptyMod",
+		"name": "Empty Mod",
+		"description": "",
+		"version": "1.0",
+		"mcversion": "1.5.2",
+		"url": "http://github.com/wtallis/t244mods",
+		"updateUrl": "",
+		"authors": [ "wtallis" ],
+		"credits": "",
+		"logoFile": "",
+		"screenshots": [],
+		"parent": "",
+		"requiredMods": [ "Forge" ],
+		"dependencies": [ ],
+		"dependants": [ ],
+		"useDependencyInformation": "true"
+	}]
+}
