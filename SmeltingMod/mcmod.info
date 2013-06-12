@@ -4,7 +4,7 @@
 		"modid": "T244_SmeltingMod",
 		"name": "Smelting Mod",
 		"description": "Adds several recipes for recycling iron by melting down objects that were crafted from iron.",
-		"version": "1.0",
+		"version": "1.1",
 		"mcversion": "1.5.2",
 		"url": "http://github.com/wtallis/t244mods",
 		"updateUrl": "",
@@ -13,8 +13,8 @@
 		"logoFile": "",
 		"screenshots": [],
 		"parent": "",
-		"requiredMods": [ "Forge" ],
-		"dependencies": [ ],
+		"requiredMods": [ "Forge", "T244_NewItemMod" ],
+		"dependencies": [ "T244_NewItemMod" ],
 		"dependants": [ ],
 		"useDependencyInformation": "true"
 	}]
