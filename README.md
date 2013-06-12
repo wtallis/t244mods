@@ -10,7 +10,7 @@ This is pretty much the bare minimum mod. It does nothing except require its own
 SmeltingMod
 -----------
 
-Illustrates how to add new smelting recipes, by adding several to recycle iron from various blocks and items that are crafted from iron.
+Illustrates how to add new smelting recipes, by adding several to recycle iron from various blocks and items that are crafted from iron. (requires NewItemMod)
 
 CraftingMod
 -----------
@@ -21,6 +21,11 @@ NewBlockMod
 -----------
 
 Illustrates how to add a new block, give it a name and texture, and change what it drops when broken.
+
+NewItemMod
+----------
+
+Illustrates how to add a new item: iron nuggets.
 
 LightningAspectMod
 ------------------
