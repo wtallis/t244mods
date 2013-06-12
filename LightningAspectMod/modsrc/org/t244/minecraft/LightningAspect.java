@@ -39,7 +39,6 @@ public class LightningAspect extends Enchantment {
 	public void attackEntityHandler(AttackEntityEvent e) {
 		EntityPlayer player = e.entityPlayer;
 		Entity target = e.target;
-		player.addExperienceLevel(1);
 		
 		ItemStack i = player.getHeldItem();
 		
