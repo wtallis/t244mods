@@ -33,7 +33,8 @@ public class NewItemMod {
 	public void load(FMLInitializationEvent event) {
 		ironNugget = new IronNugget(ironNuggetID);
 		LanguageRegistry.addName(ironNugget, "Iron Nugget");
-
+		GameRegistry.registerItem(ironNugget, "ironNugget");
+		
 		// register recipe to craft 8 ironNugget into 1 ironIngot
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.ingotIron), 
 				ironNugget, ironNugget, ironNugget, ironNugget,	
