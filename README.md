@@ -27,6 +27,11 @@ NewItemMod
 
 Illustrates how to add a new item: iron nuggets.
 
+FoodMod
+-------
+
+Adds Beef Stew.
+
 LightningAspectMod
 ------------------
 
