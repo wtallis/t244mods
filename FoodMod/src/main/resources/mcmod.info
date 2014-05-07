@@ -1,0 +1,13 @@
+[{
+	"modid": "t244_foodmod",
+	"name": "Food Mod",
+	"description": "Illustrates how to add a new food item: beef stew",
+	"version": "1.0",
+	"mcversion": "1.7.2",
+	"url": "http://github.com/wtallis/t244mods",
+	"updateUrl": "",
+	"authorList": [ "wtallis" ],
+	"credits": "",
+	"logoFile": "",
+	"screenshots": []
+}]
