@@ -1,3 +1,8 @@
 rootProject.name = 't244mods'
 include 'EmptyMod'
-
+include 'CraftingMod'
+include 'NewItemMod'
+include 'SmeltingMod'
+include 'NewBlockMod'
+include 'FoodMod'
+include 'OreMod'
