@@ -10,5 +10,8 @@
 		"credits": "",
 		"logoFile": "",
 		"screenshots": [],
-		"dependencies": [ ]
+		"requiredMods": [ ],
+        "dependencies": [ ],
+        "dependants": [ "t244_smeltingmod" ],
+        "useDependencyInformation": "true"
 }]
