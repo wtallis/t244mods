@@ -25,5 +25,11 @@ public class CraftingMod {
 				'I', Items.iron_ingot // we could use an ItemStack to require more than one ingot
 			}
 		);
+        GameRegistry.addRecipe(new ItemStack(Items.diamond_horse_armor),
+                "  L",
+                "DLD",
+                "DSD",
+                'L',Items.leather,'D',Items.diamond,'S',Items.string
+        );
 	}
 }
