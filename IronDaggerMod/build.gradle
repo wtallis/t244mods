@@ -1,0 +1,6 @@
+version=1.0
+archivesBaseName="IronDaggerMod"
+
+dependencies {
+    compile "org.t244.minecraft:NewItemMod:1.0"
+}
