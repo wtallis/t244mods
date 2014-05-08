@@ -5,7 +5,8 @@ You are free to use this code for any purpose, but it comes with no guarantees o
 EmptyMod
 --------
 
-This is pretty much the bare minimum mod. It does nothing except require its own presence on both the client and server.
+This is pretty much the bare minimum mod. Equivalent to the example
+mod that now ships with Forge.
 
 SmeltingMod
 -----------
@@ -35,6 +36,12 @@ Adds Beef Stew.
 LightningAspectMod
 ------------------
 
-*INCOMPLETE*
+Shows how to add a new sword enchantment. The enchantment causes any mob or player you attack to be struck by lightning. If used in survival mode, you will also be harmed by the lightning bolt. Forge currently lacks a system for getting an unused enchantment ID, so we do our best to find one, but things still might conflict with other enchantment mods.
 
-Shows how to add a new sword enchantment. The enchantment causes any mob you attack to be struck by lightning. If used in survival mode, you will also be harmed by the lightning bolt. Forge currently lacks a system for getting an unused enchantment ID, so we do our best to find one, but things still might confilct with other enchantment mods. This mod also does not currently provide a localizable name for the enchantment.
+OreMod
+-
+
+*Incomplete*
+
+Introduces a low-grade iron ore that smelts down to iron nuggets
+rather than a full ingot.
