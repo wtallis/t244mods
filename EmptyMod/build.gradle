@@ -1,2 +1,13 @@
 version = "1.0"
 archivesBaseName = "EmptyMod"
+
+dependencies {
+    runtime project(":NewItemMod")
+    runtime project(":CraftingMod")
+    runtime project(":FoodMod")
+    runtime project(":IronDaggerMod")
+    runtime project(":LightningAspectMod")
+    runtime project(":NewBlockMod")
+    runtime project(":OreMod")
+    runtime project(":SmeltingMod")
+}
