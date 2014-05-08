@@ -10,7 +10,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = CraftingMod.modid, name = "CraftingMod", version = "1.0")
 public class CraftingMod {
-	public static final String modid = "T244_CraftingMod";
+	public static final String modid = "t244_craftingmod";
 
 	@EventHandler
 	public void load(FMLInitializationEvent e) {

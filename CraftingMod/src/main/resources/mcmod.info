@@ -1,5 +1,5 @@
  [{
-		"modid": "T244_CraftingMod",
+		"modid": "t244_craftingmod",
 		"name": "Crafting Mod",
 		"description": "Illustrates how to add a new shaped crafting recipe",
 		"version": "1.0",
@@ -9,6 +9,5 @@
 		"authorList": [ "wtallis" ],
 		"credits": "",
 		"logoFile": "",
-		"screenshots": [],
-		"dependencies": [ ]
+		"screenshots": []
 }]
