@@ -45,3 +45,11 @@ OreMod
 
 Introduces a low-grade iron ore that smelts down to iron nuggets
 rather than a full ingot.
+
+IronDaggerMod
+-
+
+*Incomplete*
+
+Adds an iron dagger that has lower damage than a sword but higher
+enchantability and a powerful sneaking backstab attack.
