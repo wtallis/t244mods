@@ -17,7 +17,7 @@ public class IronDaggerMod {
 
 	@EventHandler
 	public void load(FMLInitializationEvent e) {
-		ToolMaterial nuggetIron = EnumHelper.addToolMaterial("nuggetIRON", 2, 250, 6.0F, 1.0F, 18);
+		ToolMaterial nuggetIron = EnumHelper.addToolMaterial("nuggetIRON", 2, 250, 6.0F, -1.0F, 18);
 		nuggetIron.customCraftingMaterial = NewItemMod.ironNugget;
 
 		ironDagger = new Dagger(nuggetIron);
