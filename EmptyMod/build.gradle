@@ -10,4 +10,5 @@ dependencies {
     runtime project(":NewBlockMod")
     runtime project(":OreMod")
     runtime project(":SmeltingMod")
+    runtime project(":ExampleMob")
 }
