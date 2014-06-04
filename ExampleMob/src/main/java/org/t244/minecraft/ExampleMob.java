@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityGiantZombie;
+import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
@@ -32,8 +33,8 @@ public class ExampleMob extends EntityGiantZombie {
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, 0, false));
-		//this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, 0, false));
-		//this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, ExampleMob.class, 0, false));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, 0, false));
+		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, ExampleMob.class, 0, false));
 	}
 
 	@Override
