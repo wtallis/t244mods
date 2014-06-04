@@ -6,7 +6,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityGiantZombie;
-import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
@@ -31,10 +30,10 @@ public class ExampleMob extends EntityGiantZombie {
 		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		this.tasks.addTask(8, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
-		//this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
-		//this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, 0, false));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, 0, false));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, ExampleMob.class, 0, false));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, 0, false));
+		//this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, 0, false));
+		//this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, ExampleMob.class, 0, false));
 	}
 
 	@Override
@@ -56,9 +55,10 @@ public class ExampleMob extends EntityGiantZombie {
 	}
 
 	@Override
-	protected String getLivingSound() {
-		return "creeper.primed";
-	}
+	protected void fall(float i) { return; }
+
+	@Override
+	protected boolean canDespawn() { return false; }
 
 	@Override
 	public boolean attackEntityAsMob(Entity par1Entity)
@@ -66,7 +66,7 @@ public class ExampleMob extends EntityGiantZombie {
 		float damage = (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
 		int knockback = 20; // base knockback level
 
-		this.playSound("mob.ghast.moan", 1.0F, 0.125F);
+		this.playSound("t244_mobmod:punch", 8.0F, 1.0F);
 		if (par1Entity instanceof EntityLivingBase)
 		{
 			damage += EnchantmentHelper.getEnchantmentModifierLiving(this, (EntityLivingBase) par1Entity);

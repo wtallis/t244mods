@@ -1,0 +1,6 @@
+{
+    "punch": {
+	"category": "hostile",
+	"sounds": [ "punch_alpha", "punch_beta", "punch_bass_boost", "punch_sci-fi"  ]
+    }
+}

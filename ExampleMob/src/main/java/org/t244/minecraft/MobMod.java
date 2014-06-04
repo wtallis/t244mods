@@ -7,7 +7,7 @@ import net.minecraft.entity.EntityList;
 /**
  * Created by wtallis on 5/14/14.
  */
-@Mod(modid="mobmod", version="1.0")
+@Mod(modid="t244_mobmod", version="1.0")
 public class MobMod {
 
 	@Mod.EventHandler
