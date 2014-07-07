@@ -1,5 +1,6 @@
 package org.t244.minecraft;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,5 +30,11 @@ public class CraftingMod {
                 "DSD",
                 'L',Items.leather,'D',Items.diamond,'S',Items.string
         );
+		GameRegistry.addRecipe(new ItemStack(Items.record_11),
+				"O O",
+				" W ",
+				"O O",
+				'O', Blocks.obsidian, 'W', new ItemStack(Blocks.wool,1,15)
+		);
 	}
 }
