@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.EntityGiantZombie;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.passive.EntityVillager;
@@ -17,6 +18,8 @@ import net.minecraft.world.World;
  * Created by wtallis on 5/13/14.
  */
 public class ExampleMob extends EntityGiantZombie {
+	private int deathTimeExt;
+
 	public ExampleMob(World w) {
 		super(w);
 
@@ -32,8 +35,8 @@ public class ExampleMob extends EntityGiantZombie {
 		this.tasks.addTask(8, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, 0, false));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, 0, false));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, 0, false));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, 0, false));
 		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, ExampleMob.class, 0, false));
 	}
 
@@ -101,5 +104,41 @@ public class ExampleMob extends EntityGiantZombie {
 		}
 
 		return flag;
+	}
+
+	@Override
+	protected void onDeathUpdate()
+	{
+		++this.deathTimeExt;
+		if (this.deathTimeExt%3 == 0)
+			++this.deathTime;
+
+
+		if (this.deathTime == 20)
+		{
+			int i;
+
+			if (!this.worldObj.isRemote && (this.recentlyHit > 0 || this.isPlayer()) && this.func_146066_aG() && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot"))
+			{
+				i = this.getExperiencePoints(this.attackingPlayer);
+
+				while (i > 0)
+				{
+					int j = EntityXPOrb.getXPSplit(i);
+					i -= j;
+					this.worldObj.spawnEntityInWorld(new EntityXPOrb(this.worldObj, this.posX, this.posY, this.posZ, j));
+				}
+			}
+
+			this.setDead();
+
+			for (i = 0; i < 20; ++i)
+			{
+				double d2 = this.rand.nextGaussian() * 0.02D;
+				double d0 = this.rand.nextGaussian() * 0.02D;
+				double d1 = this.rand.nextGaussian() * 0.02D;
+				this.worldObj.spawnParticle("explode", this.posX + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, this.posY + (double)(this.rand.nextFloat() * this.height), this.posZ + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, d2, d0, d1);
+			}
+		}
 	}
 }
