@@ -42,7 +42,7 @@ group = "org.t244.minecraft"
 
 minecraft {
     version = "1.7.2-10.12.2.1121"
-    assetDir = "../run/assets"
+    runDir = "../run"
 }
 
 repositories {
